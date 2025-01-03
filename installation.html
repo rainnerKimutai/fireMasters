@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTV Installation - Firemasters EA Limited</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 {
+      color: #b61806;
+    }
+
+    a {
+      color: #ff1900;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      color: #333;
+      padding: 10px 10%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    header .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    header .contact-info a {
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    header .contact-info a:hover {
+      color: #b61806;
+    }
+
+    header nav {
+      background: #b61806;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header nav a {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin: 0 15px;
+    }
+
+    header nav a:hover {
+      color: #f4f4f4;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 50vh;
+      background: url('img/cctv-hero.jpg') no-repeat center center/cover; /* Replace with your image */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 10%;
+      color: #fff;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 50px 10%;
+      background: #f4f4f4;
+      display: flex;
+      gap: 40px;
+    }
+
+    .content .image-section {
+      flex: 1;
+    }
+
+    .content .image-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .content .description-section {
+      flex: 1;
+    }
+
+    .content h2 {
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background: #ff1900;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #b61806;
+    }
+
+    /* Black Background Section */
+    .black-section {
+      background: #000;
+      color: #fff;
+      padding: 50px 10%;
+      text-align: center;
+    }
+
+    .black-section h2 {
+      margin-bottom: 20px;
+    }
+
+    .black-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .black-section .cta-button {
+      background: #ff1900;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .black-section .cta-button:hover {
+      background: #b61806;
+    }
+
+    /* Footer Styles */
+footer {
+  background: #ff1b02; /* Background color */
+  color: #fff; /* Text color */
+  padding: 50px 10%;
+  text-align: left;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+  color: #fff; /* Heading color */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff; /* Link color */
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #f4f4f4; /* Link hover color */
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #fff; /* Social icon color */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f4f4f4; /* Social icon hover color */
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  background: #fff; /* Button background color */
+  color: #ff1b02; /* Button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #f4f4f4; /* Button hover background color */
+  color: #ff1b02; /* Button hover text color */
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divider line */
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.footer-bottom a {
+  color: #fff; /* Legal link color */
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #f4f4f4; /* Legal link hover color */
+}
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header .contact-info {
+        display: none; /* Hide contact info on smaller screens */
+      }
+
+      header nav {
+        padding: 10px;
+      }
+
+      header nav a {
+        margin: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">FIREMASTERS (EA) LIMITED</div>
+      <div class="contact-info">
+        <p><a href="tel:+25204141409"><i class="fas fa-phone"></i> +254 704141509</a></p>
+        <p><a href="mailto:firemastersep@firesh.com"><i class="fas fa-envelope"></i> firemastersapps@gmail.com</a></p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Content Section -->
+  <section class="content">
+    <div class="image-section">
+      <img src="img/fire alarm.png" alt="fire alarm Installation"> <!-- Replace with your image -->
+    </div>
+    <div class="description-section">
+      <h2>FIRE SYSTEM INSTALLATIONS</h2>
+      <p>
+        At Firemasters (EA) Limited, we excel in the installation of state-of-the-art fire safety systems tailored to meet the specific needs of your property. Our team of skilled technicians ensures that each installation adheres to the highest safety standards, providing you with peace of mind. We work with a variety of systems, including sprinklers, alarms, and suppression solutions, ensuring comprehensive coverage for your space. With our commitment to quality and safety, you can trust us to protect what matters most. Count on us for efficient and reliable fire system installations that safeguard your environment.      </p>
+      <a href="#contact" class="cta-button">SCHEDULE APPOINTMENT</a>
+    </div>
+  </section>
+
+  <!-- Black Background Section -->
+  <section class="black-section">
+    <h2>READY TO ENHANCE YOUR SAFETY?</h2>
+    <p>Contact us today to learn more about our fire alarm system and how we can help safeguard your property.</p>
+    <a href="index.html#contact" class="cta-button">CONTACT US</a>
+  </section>
+</body>
+<footer>
+  <div class="footer-content">
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p><a href="tel:+254704141509"><i class="fas fa-phone"></i> +254 704 141 509</a></p>
+      <p><a href="mailto:firemastersapp@gmail.com"><i class="fas fa-envelope"></i> firemastersapp@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Kericho, Kenya</p>
+      <p><i class="fas fa-map-marker-alt"></i> Eldoret, Kenya</p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div class="footer-section">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Legal Information -->
+  <div class="footer-bottom">
+    <p>&copy; 2023 Firemasters (EA) Limited. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </div>
+</footer>
+</html>
